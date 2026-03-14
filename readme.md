@@ -1,6 +1,8 @@
 Cat-Health-Monitoring
 An electronic cat can use an SVC model to evaluate the health indicators of people carrying electronic devices such as blood pressure and mobile phone gyroscopes, detect their movement status, and link LLM to provide medical advice
 
+Download the required database through setup. py
+
 Quick Start Steps
 1. Environmental preparation
 First, create the Conda environment and install the dependencies:
