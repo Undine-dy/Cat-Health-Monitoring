@@ -1,0 +1,25 @@
+快速开始步骤
+1. 环境准备
+首先创建Conda环境并安装依赖：
+# 1. 安装/更新依赖（记得替换本地路径）
+conda create -n "moon_project" python=3.9
+# 进入项目目录
+cd C:\Users\26710\Desktop\work\moon\TeamResearch\fall_detection_backend
+# 安装依赖（使用清华源加速）
+conda run -n "moon_project" pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+# 2. 验证导入
+conda run -n "moon_project" python -c "import main, fusion_main, requests, pandas; print('import success')"
+
+# 3. 启动旧版后端（新窗口）
+cd C:\Users\26710\Desktop\work\moon\TeamResearch\fall_detection_backend
+conda run -n "moon_project" python manage.py serve-legacy
+服务将在 http://localhost:8000 启动。
+
+# 4. 接口测试（新窗口）在新终端窗口中测试API：
+cd C:\Users\26710\Desktop\work\moon\TeamResearch\fall_detection_backend
+conda run -n "moon_project" python manage.py test-api
+
+# 5. 真实数据测试（新窗口）使用真实数据进行端到端测试：
+cd C:\Users\26710\Desktop\work\moon\TeamResearch\fall_detection_backend
+conda run -n "moon_project" python manage.py test-real

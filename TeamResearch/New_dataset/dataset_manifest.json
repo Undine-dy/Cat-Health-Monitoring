@@ -1,0 +1,43 @@
+{
+  "project_root": "E:\\moon\\TeamResearch",
+  "pamap2_root": "E:\\moon\\TeamResearch\\Dataset\\PAMAP2\\PAMAP2_Dataset\\PAMAP2_Dataset",
+  "wesad_root": "E:\\moon\\TeamResearch\\Dataset\\WESAD_Kaggle\\WESAD",
+  "output_root": "E:\\moon\\TeamResearch\\New_dataset",
+  "num_people": 12,
+  "rows_per_person": 360,
+  "total_rows": 4320,
+  "pamap_subjects_used": [
+    "subject101",
+    "subject102",
+    "subject103",
+    "subject104",
+    "subject105",
+    "subject106",
+    "subject107",
+    "subject108",
+    "subject109"
+  ],
+  "wesad_subjects_used": [
+    "S10",
+    "S11",
+    "S13",
+    "S14",
+    "S15",
+    "S16",
+    "S17",
+    "S2",
+    "S3",
+    "S4",
+    "S5",
+    "S6",
+    "S7",
+    "S8",
+    "S9"
+  ],
+  "sampling": {
+    "pamap_downsample_step": 40,
+    "wesad_downsample_step": 16,
+    "seed": 42
+  },
+  "rule": "All numeric values are taken directly from PAMAP2/WESAD rows; only sequence pairing is recombined."
+}

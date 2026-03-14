@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>猫猫提醒你要健康生活</title>
+  <link rel="stylesheet" href="/assets/wellness.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="card hero">
+      <div class="hero-art" aria-hidden="true">
+        <div class="pixel-cat cat-amber"></div>
+        <div class="pixel-cat cat-mint"></div>
+        <div class="pixel-cat cat-peach"></div>
+      </div>
+      <div class="hero-copy">
+        <p class="eyebrow">Pixel Care Console</p>
+        <h1>猫猫提醒你要健康生活</h1>
+        <p class="hero-text">上传一组健康数据，让猫猫看看你的身体是否健康；猫还可以联动跌倒警报还贴心的为你写了一份医学记录。</p>
+        <div class="hero-actions">
+          <button id="loadProjectSample" type="button">载入项目样例 ID_010</button>
+          <button id="loadSimpleSample" type="button" class="ghost">载入简版样例</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="grid">
+      <section class="card panel">
+        <div class="panel-head">
+          <h2>1. 健康报告与追问</h2>
+          <span class="tag">LLM + 报告</span>
+        </div>
+        <label class="field">
+          <span>用户 ID</span>
+          <input id="wellnessUserId" type="text" value="cat_user">
+        </label>
+        <label class="field">
+          <span>导入 JSON 文件</span>
+          <input id="wellnessFile" type="file" accept=".json,application/json">
+        </label>
+        <label class="field">
+          <span>用户数据 JSON</span>
+          <textarea id="wellnessInput" spellcheck="false"></textarea>
+        </label>
+        <div class="action-row">
+          <button id="generateReport" type="button">生成健康报告</button>
+          <span id="wellnessStatus" class="status">等待输入</span>
+        </div>
+
+        <div id="wellnessResult" class="result hidden">
+          <div class="mini-block">
+            <h3>猫猫很关心你</h3>
+            <div id="responseText" class="bubble"></div>
+          </div>
+
+          <div class="mini-block">
+            <h3>报告摘要</h3>
+            <div id="overviewText" class="overview"></div>
+            <div id="flagList" class="flag-list"></div>
+          </div>
+
+          <div class="mini-block">
+            <h3>完整报告</h3>
+            <div id="reportText" class="report-box"></div>
+          </div>
+
+          <div class="mini-block">
+            <h3>继续追问</h3>
+            <div id="chatHistory" class="chat-history"></div>
+            <div class="chat-row">
+              <textarea id="chatQuestion" placeholder="例如：为什么你会觉得我最近恢复不足？"></textarea>
+              <button id="sendChat" type="button">发送追问</button>
+            </div>
+          </div>
+
+          <div class="action-row">
+            <button id="downloadRecord" type="button">下载正式医学记录</button>
+            <span class="note">正式记录不包含融合系统原始指标数据。</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="card panel">
+        <div class="panel-head">
+          <h2>2. 跌倒警报检测</h2>
+          <span class="tag">Action Guard</span>
+        </div>
+        <label class="field">
+          <span>动作数据 JSON</span>
+          <textarea id="fallInput" spellcheck="false"></textarea>
+        </label>
+        <div class="action-row">
+          <button id="detectFall" type="button">分析动作反应</button>
+          <span id="fallStatus" class="status">可输入 activity_label 或 561 维 features</span>
+        </div>
+
+        <div id="fallResult" class="result hidden">
+          <div class="mini-block">
+            <h3>系统反应</h3>
+            <div id="fallReaction" class="bubble"></div>
+          </div>
+          <div class="mini-grid">
+            <div class="mini-stat">
+              <span class="stat-label">识别动作</span>
+              <strong id="fallActivity">-</strong>
+            </div>
+            <div class="mini-stat">
+              <span class="stat-label">用户状态</span>
+              <strong id="fallState">-</strong>
+            </div>
+          </div>
+          <pre id="fallDetails" class="report-box small"></pre>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/assets/wellness.js"></script>
+</body>
+</html>
